@@ -69,14 +69,18 @@ cd real_estate_price_prediction
 ### 2. Prerequisites
 Ensure you have the following installed:
 - Python (version 3.x or later)
-- A code editor (e.g., VS Code, PyCharm)
+- A code editor (e.g., VS Code, PyCharm, jupyter notebook)
 
 ### 3. Create a Virtual Environment
+
 Creating a virtual environment prevents dependency conflicts:
 ```bash
 python -m venv venv
 source venv/bin/activate  # On Mac/Linux
 venv\Scripts\activate  # On Windows
+i've created the venv using anaconda navigator like so:
+conda create -n realestate 
+conda activate realestate
 ```
 
 ### 4. Install Required Libraries
