@@ -51,9 +51,10 @@ Creating a virtual environment prevents dependency conflicts:
 python -m venv venv
 source venv/bin/activate  # On Mac/Linux
 venv\Scripts\activate  # On Windows
-i've created the venv using anaconda navigator like so:
+#i've created the venv using anaconda navigator like so:
 "conda create -n realestate" 
 "conda activate realestate"
+```
 2. Load and clean the data.
 3. Create new features and normalize values.
 4. Split the dataset into training and test sets.
@@ -81,7 +82,7 @@ ChatGPT
 GitHub Copilot
 
 The dataset was obtained via web scraping by Amro Askar (Data Scientist & Machine Learning Engineer) and sourced from Kaggle. It is licensed under Apache 2.0.
-
+```
 # 📄 License
 This project is licensed under the MIT License.
 
@@ -104,3 +105,4 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
+```
