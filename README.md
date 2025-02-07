@@ -7,71 +7,44 @@ This project, developed during the university course in Data Mining and Text Ana
 I am a student passionate about Data Science and Machine Learning. This project represents a practical application of my knowledge, with the goal of building reproducible and adaptable predictive models for real estate pricing.
 
 ## 📚 Appendix
-This section provides additional details to ensure a step-by-step understanding and adaptability of the code. Below is the structured approach followed in the project:
+Real Estate Price Prediction Project Description
+The project aims to analyze and predict real estate prices in Milan using Machine Learning models. Data cleaning, feature engineering, and predictive modeling processes are performed.
+Key Steps
+1. Data Loading and Cleaning
+    * Import the dataset containing Milan real estate prices.
+    * Remove columns with more than 25% missing values to ensure data quality.
+    * Standardize column names to lowercase.
+    * Save the cleaned dataset for future use.
+2. Feature Engineering
+    * Create new features derived from existing ones (e.g., total_features).
+    * Correct and normalize numerical values (e.g., area_m2, condominium fees).
+    * Extract coordinates of properties to create a heatmap to visualize the distribution of properties and divide the city into a spatial grid for geographic data representation.
+3. Dataset Splitting
+    * Separate independent features (X) from the target variable (y).
+    * Split the dataset into a training set (80%) and a test set (20%).
+    * Standardize features to ensure consistency across models.
+4. Model Training
+    * Random Forest Regressor: A model based on decision trees for price prediction.
+    * Linear Regression: A linear regression model to compare performance.
+    * Train the models on the training data.
+5. Performance Evaluation
+    * Calculate error metrics for each model:
+        * Mean Squared Error (MSE)
+        * Mean Absolute Error (MAE)
+        * Coefficient of Determination (R²)
+    * Compare actual and predicted values using scatter plots.
+6. Result Visualization
+    * Generate comparison graphs between actual and predicted prices.
+    * Add annotations with evaluation metrics to the graphs.
+    * Divide the city into grids for better geographic analysis of prices.
 
-### **1. Dataset Exploration and Cleaning**
-- The code starts by displaying the columns and structure of the dataset.
-- A preprocessing step was performed to clean verbose column names.
-- An initial **Linear Regression** model was executed after encoding specific categorical variables:
-  - One-hot encoding: `['condition', 'heating']`
-  - Frequency encoding: `['neighborhood', 'street']`
-- The initial set of features considered for prediction:
-  ```python
-  features = ['number_rooms', 'area_m2', 'bathrooms', 'floor_number', 'condominium fees',
-              'year of construction', 'heating', 'condition_Excellent / Refurbished',
-              'condition_Good condition / Liveable', 'condition_New / Under construction',
-              'condition_Not open to participation', 'condition_Open to participate',
-              'condition_To be refurbished']
-  target = 'price_euro'
-  ```
 
-### **2. Feature Selection and Model Optimization**
-- A second regression model was built with a **reduced number of features** and fewer categorical encodings:
-  - One-hot encoding: `['heating']`
-  - Frequency encoding: `['Energy Efficiency', 'neighborhood']`
-- Updated feature set:
-  ```python
-  features = ['number_rooms', 'area_m2', 'bathrooms', 'floor_number', 'condominium fees', 'year of construction', 'Energy Efficiency']
-  ```
+# Requirements
+* Python 3.x (or later version)
+* A code editor (e.g., VS Code, PyCharm, jupyter notebook)
 
-### **3. Geospatial Feature Engineering**
-- Extracted **property coordinates** and performed manual encoding on:
-  - `Energy Efficiency`
-  - `grid_cell` (coordinates categorized into numbered cells from 1 to 49)
-  - `heating`
-  - `condition`
-- This approach ensures that newly entered data can be easily assigned the necessary characteristics for model predictions.
-
-### **4. Feature Correlation and Mutual Information Analysis**
-- A **correlation matrix** was generated to analyze relationships between variables.
-- **Mutual information** was computed to determine the influence of features on the target price.
-
-### **5. Grid-Based Model Enhancement**
-- The city of Milan was divided into numbered grid cells based on extracted coordinates.
-- **Regression models (Linear Regression & Random Forest) were retrained** using the new spatially categorized features.
-- Initial models performed poorly, prompting further optimization.
-
-### **6. Data Augmentation and Final Model Training**
-- Focused on **grid cells 30 and 31**, which had high data density and similar characteristics.
-- Extracted rows from these zones and **used ChatGPT to generate 20,000 synthetic records** that matched the existing data.
-- Merged the synthetic data with the original subset, creating a dataset with **20,115 rows**.
-- Trained final models on this enriched dataset:
-  - **Linear Regression**
-  - **Random Forest**
-
-## ⚙️ Installation
-### 1. Clone the repository
-```bash
-git clone <[repository_link](https://github.com/AleBragato/house_price_prediction.git)>
-cd real_estate_price_prediction
-```
-
-### 2. Prerequisites
-Ensure you have the following installed:
-- Python (version 3.x or later)
-- A code editor (e.g., VS Code, PyCharm, jupyter notebook)
-
-### 3. Create a Virtual Environment
+* # Project Execution
+1 Create a Virtual Environment
 
 Creating a virtual environment prevents dependency conflicts:
 ```bash
@@ -79,8 +52,17 @@ python -m venv venv
 source venv/bin/activate  # On Mac/Linux
 venv\Scripts\activate  # On Windows
 i've created the venv using anaconda navigator like so:
-conda create -n realestate 
-conda activate realestate
+"conda create -n realestate" 
+"conda activate realestate"
+2. Load and clean the data.
+3. Create new features and normalize values.
+4. Split the dataset into training and test sets.
+5. Train Machine Learning models.
+6. Evaluate performance and visualize results.
+
+The project provides a data-driven approach to predicting real estate prices, combining Machine Learning techniques and geographic analysis.
+
+
 ```
 
 ### 4. Install Required Libraries
